@@ -1,0 +1,19 @@
+1. 
+lệnh cho: isA = 1 nếu điều kiện trong () đúng và 0 khi nó sai
+sửa lại: bool isA = ( 90<= grade && grade <= 100 ) ;
+2. 0
+3. phép nhân x*x cho kết quả là int sau đó mới đổi sang dạng long mà x*x = 2^32 vượt quá kích thước int
+4. false
+5. lỗi runtime
+6. 
+lỗi biên dịch khi nhân một số nguyên với một chuỗi và lỗi biên dịch cout<<x do không khởi tạo.
+khi cho dòng khai báo x ra khỏi hàm main thì x thành biến toàn cục
+7. 0 
+   0.75
+   0.75
+   0.75
+8. Lỗi khai báo: biến arg1 đã được khai báo trước đó là int
+9. arg1 ="A"
+10. arg1 = -1
+11. lỗi: chưa ép kiểu cho (5/9)
+12. Here
