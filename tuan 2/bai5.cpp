@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 #include <string>
 using namespace std;
 
@@ -25,7 +25,7 @@ string numberToEnglish(int num) {
         num %= 1000;
     }
     if (num >= 100) {
-        result += numberToEnglish(num / 100) + "1hundred ";
+        result += numberToEnglish(num / 100) + "hundred ";
         num %= 100;
     }
     if (num >= 20) {
