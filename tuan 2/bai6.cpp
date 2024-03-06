@@ -1,15 +1,20 @@
-#include <bits/stdc++.h>
+#include <iostream>
+
 using namespace std;
-int main(){
-    int n;
-    cin>>n;
-    for(int i = 0; i<n; i++){
-        for(int j = i; j<n; j++){
-            cout<< j+1 << " ";
+
+void printMatrix(int n) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            int num = (i + j) % n + 1;
+            cout << num << " ";
         }
-        for(int k = n-i; k<n; k++){
-            cout<<n-k<<" ";
-        }
-        cout<<endl;
+        cout << endl;
     }
+}
+
+int main() {
+    int n;
+    cin >> n;
+    printMatrix(n);
+    return 0;
 }
