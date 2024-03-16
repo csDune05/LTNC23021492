@@ -14,7 +14,7 @@ int main() {
     cout << endl;
 
     char daytabPartial[2][12] = {
-        {31,28,31,30},
+        {31,28,31},
         {31,29}
     };
     for (int i = 0; i < 2; i++) {
