@@ -10,7 +10,7 @@ int main() {
     int* p = taocontro();
     cout << *p << endl;
     // p ddang trỏ đến một biến địa phương đã bị hủy nên lỗi
-    delete dynamicPointer;
+    delete p;
     // giải phóng bộ nhớ của 1 biến địa phương --> lỗi
     return 0;
 }
