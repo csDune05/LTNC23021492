@@ -1,0 +1,66 @@
+con trỏ và bộ nhớ cấp phát động (bài 9 - D)
+1. khai báo không hợp lệ int*p = 10
+   10 là giá trị nguyên không phải địa chỉ của mmootj vùng nhớ
+
+2. int *p = new int[3]; p[0]=1; p[1]=2; p[2]=4; int a=&p[2]-&p[1]
+   kết quả của a là: 1, giải thích: các phần tử trong p là int, kích thước mỗi ptu là 4byte, a = ( &p[2] - &p[1] ) / sizeof(int) = 4/4 = 1;
+
+3. phát biểu sai: Phải cung cấp độ dài cho mảng động ngay khi khai báo
+
+4. phát biểu sai: là kiểu truyền giá trị
+
+5. void printPtr(int *p); void print(int p);
+lời gọi hàm sai: int* a = new int(0); print(a)
+giải thích: hàm print yêu cầu tham số kiểu int khi được gọi mà print(a) ở đây truyền vào con trỏ kiểu int 
+
+6. int *aPtr = new int(0); int *sPtr; int number = 4;
+   những câu lệnh không đúng về cách lập trình: 
+   *sPtr = number; khi chạy thì *sPtr vẫn rỗng vì *sPtr chưa được khởi tạo hay trỏ tới 1 vùng nhớ nào
+   number = aPtr: không thể gán giá trị của một con trỏ kiểu int cho 1 biến kiểu int
+
+7. đoạn mã in ra giá trị của một mảng động( con trỏ *p ) N phần tử là: for (int i=0; i<N; i++) cout << *(p+i) << “ “;
+
+8. int a=5, *p1, *p2;
+	p1 = new int(10);
+	p2 = new int(20);
+	*p1 = a; p2 = &a; a++;
+	cout << " " << *p1 << " " << *p2 << endl;
+   kết quả: 5 6 *p1 = a --> *p1 = a = 5;
+                 p2 = &a --> p2 trỏ tới biến a, a++ nên a = 6, 8p2 = 6;
+
+9. void a(int *p) { *p++; }
+	void b(int *p) { (*p)++; }
+	void c(int p) { p++; }
+	int main
+	{
+	    int *p = new int(5);
+	    b(p); a(p); c(*p);
+	}
+   kết quả là 6: hàm a sai: *p++, ++ trước rồi mới lấy *
+                 hàm b đúng --> *p = 6
+                 hàm c sai: như câu 5
+
+10.     int *p1, *p2;
+	p1 = new int;
+	p2 = new int;
+	*p1 = 10;
+	*p2 = 20;
+	cout << *p1 << " " << *p2;
+	p1 = p2;
+	cout << " " << *p1 << " " << *p2;
+	*p1 = 30;
+	cout << " " << *p1 << " " << *p2 << endl;
+  kết quả là: 10 20 20 20 30 30
+  giải thích: đợt cout đầu: 10 20, sau đó p1 = p2 nên p1 trỏ tới cùng ô nhớ p2 nên đợt cout tiếp 20 20, *p1 = 30, do trước đó p1, 2 trỏ tới cùng ô nhớ nên *p2 cũng = 30
+
+11. int *p1, *p2, *p3;
+	p1 = new int(10); p2 = new int(20); p3 = new int(*p1 + *p2);
+	p1 = p2; p2 = p3; p3 = p1;
+	cout << *p1 << " " << *p2 << " " << *p3 << endl;
+kết quả: 20 30 20
+giải thích: tương tự 10
+
+12. *(p+2);
+
+13.  int *p = new int[5];
+     phát biểu không đúng: *p+1 là giá trị của p[1] vì *p +1 là giá trị p[0] + 1
